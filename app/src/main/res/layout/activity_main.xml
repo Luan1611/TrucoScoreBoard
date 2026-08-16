@@ -20,11 +20,11 @@
             android:layout_height="wrap_content"
             >
             <TextView
-                android:text="Equipe A"
+                android:text="@string/equipe_a"
                 android:layout_column="0"
                 android:textSize="40sp"/>
             <TextView
-                android:text="Equipe B"
+                android:text="@string/equipe_b"
                 android:layout_column="1"
                 android:textSize="40sp"/>
         </TableRow>
@@ -48,11 +48,11 @@
             android:layout_height="wrap_content"
             >
             <TextView
-                android:text="Pontos"
+                android:text="@string/pontos"
                 android:layout_column="0"
                 android:textSize="40sp"/>
             <TextView
-                android:text="Pontos"
+                android:text="@string/pontos"
                 android:layout_column="1"
                 android:textSize="40sp"/>
         </TableRow>
@@ -65,14 +65,14 @@
                 android:id="@+id/equipeASomar1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+ 1 ponto"
+                android:text="@string/_1_ponto"
                 android:layout_column="0"/>
 
             <Button
                 android:id="@+id/equipeBSomar1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+ 1 ponto"
+                android:text="@string/_1_ponto"
                 android:layout_column="1"/>
         </TableRow>
 
@@ -84,13 +84,13 @@
                 android:id="@+id/equipeASomar3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+ 3 pontos"
+                android:text="@string/_3_pontos"
                 android:layout_column="0"/>
             <Button
                 android:id="@+id/equipeBSomar3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+ 3 pontos"
+                android:text="@string/_3_pontos"
                 android:layout_column="1"/>
         </TableRow>
 
@@ -101,7 +101,7 @@
                 android:id="@+id/resetGame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reiniciar Partida"
+                android:text="@string/reiniciar_partida"
                 android:layout_column="0"
                 android:layout_span="2"/>
         </TableRow>

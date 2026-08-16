@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TrucoScoreBoard</string>
+    <string name="equipe_a">Equipe A</string>
+    <string name="equipe_b">Equipe B</string>
+    <string name="pontos">Pontos</string>
+    <string name="_1_ponto">+ 1 ponto</string>
+    <string name="_3_pontos">+ 3 pontos</string>
+    <string name="reiniciar_partida">Reiniciar Partida</string>
 </resources>
