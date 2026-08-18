@@ -1,11 +1,14 @@
 package br.edu.ifsp.scl.sc3029531.trucoscoreboard
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.scl.sc3029531.trucoscoreboard.databinding.ActivityMainBinding
+import kotlin.toString
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     private val activityMainBinding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -44,20 +46,30 @@ class MainActivity : AppCompatActivity() {
                         .setTitle("Fim de jogo!")
                         .setMessage("A equipe A venceu a partida!")
                         .setPositiveButton("Reiniciar partida") {dialog, _ ->
-                            scoreTeamA = 0
-                            scoreTeamB = 0
-                            equipeAScore.apply { text = scoreTeamA.toString() }
-                            equipeBScore.apply { text = scoreTeamB.toString() }
-                            equipeASomar3.isEnabled = true
-                            equipeBSomar3.isEnabled = true
+                            restartGame(scoreTeamA,
+                                scoreTeamB,
+                                equipeAScore,
+                                equipeBScore,
+                                equipeASomar3,
+                                equipeBSomar3,
+                                fun() {
+                                    scoreTeamA = 0
+                                    scoreTeamB = 0
+                                }
+                            )
                         }
                         .setOnDismissListener {
-                            scoreTeamA = 0
-                            scoreTeamB = 0
-                            equipeAScore.apply { text = scoreTeamA.toString() }
-                            equipeBScore.apply { text = scoreTeamB.toString() }
-                            equipeASomar3.isEnabled = true
-                            equipeBSomar3.isEnabled = true
+                            restartGame(scoreTeamA,
+                                scoreTeamB,
+                                equipeAScore,
+                                equipeBScore,
+                                equipeASomar3,
+                                equipeBSomar3,
+                                fun() {
+                                    scoreTeamA = 0
+                                    scoreTeamB = 0
+                                }
+                            )
                         }
                         .show()
                 }
@@ -82,20 +94,30 @@ class MainActivity : AppCompatActivity() {
                         .setTitle("Fim de jogo!")
                         .setMessage("A equipe B venceu a partida!")
                         .setPositiveButton("Reiniciar partida") {dialog, _ ->
-                            scoreTeamA = 0
-                            scoreTeamB = 0
-                            equipeAScore.apply { text = scoreTeamA.toString() }
-                            equipeBScore.apply { text = scoreTeamB.toString() }
-                            equipeASomar3.isEnabled = true
-                            equipeBSomar3.isEnabled = true
+                            restartGame(scoreTeamA,
+                                scoreTeamB,
+                                equipeAScore,
+                                equipeBScore,
+                                equipeASomar3,
+                                equipeBSomar3,
+                                fun() {
+                                    scoreTeamA = 0
+                                    scoreTeamB = 0
+                                }
+                            )
                         }
                         .setOnDismissListener {
-                            scoreTeamA = 0
-                            scoreTeamB = 0
-                            equipeAScore.apply { text = scoreTeamA.toString() }
-                            equipeBScore.apply { text = scoreTeamB.toString() }
-                            equipeASomar3.isEnabled = true
-                            equipeBSomar3.isEnabled = true
+                            restartGame(scoreTeamA,
+                                scoreTeamB,
+                                equipeAScore,
+                                equipeBScore,
+                                equipeASomar3,
+                                equipeBSomar3,
+                                fun() {
+                                    scoreTeamA = 0
+                                    scoreTeamB = 0
+                                }
+                            )
                         }
                         .show()
                 }
@@ -120,20 +142,30 @@ class MainActivity : AppCompatActivity() {
                         .setTitle("Fim de jogo!")
                         .setMessage("A equipe A venceu a partida!")
                         .setPositiveButton("Reiniciar partida") {dialog, _ ->
-                            scoreTeamA = 0
-                            scoreTeamB = 0
-                            equipeAScore.apply { text = scoreTeamA.toString() }
-                            equipeBScore.apply { text = scoreTeamB.toString() }
-                            equipeASomar3.isEnabled = true
-                            equipeBSomar3.isEnabled = true
+                            restartGame(scoreTeamA,
+                                scoreTeamB,
+                                equipeAScore,
+                                equipeBScore,
+                                equipeASomar3,
+                                equipeBSomar3,
+                                fun() {
+                                    scoreTeamA = 0
+                                    scoreTeamB = 0
+                                }
+                            )
                         }
                         .setOnDismissListener {
-                            scoreTeamA = 0
-                            scoreTeamB = 0
-                            equipeAScore.apply { text = scoreTeamA.toString() }
-                            equipeBScore.apply { text = scoreTeamB.toString() }
-                            equipeASomar3.isEnabled = true
-                            equipeBSomar3.isEnabled = true
+                            restartGame(scoreTeamA,
+                                scoreTeamB,
+                                equipeAScore,
+                                equipeBScore,
+                                equipeASomar3,
+                                equipeBSomar3,
+                                fun() {
+                                    scoreTeamA = 0
+                                    scoreTeamB = 0
+                                }
+                            )
                         }
                         .show()
                 }
@@ -158,34 +190,62 @@ class MainActivity : AppCompatActivity() {
                         .setTitle("Fim de jogo!")
                         .setMessage("A equipe B venceu a partida!")
                         .setPositiveButton("Reiniciar partida") {dialog, _ ->
-                            scoreTeamA = 0
-                            scoreTeamB = 0
-                            equipeAScore.apply { text = scoreTeamA.toString() }
-                            equipeBScore.apply { text = scoreTeamB.toString() }
-                            equipeASomar3.isEnabled = true
-                            equipeBSomar3.isEnabled = true
+                            restartGame(scoreTeamA,
+                                scoreTeamB,
+                                equipeAScore,
+                                equipeBScore,
+                                equipeASomar3,
+                                equipeBSomar3,
+                                fun() {
+                                    scoreTeamA = 0
+                                    scoreTeamB = 0
+                                }
+                            )
                         }
                         .setOnDismissListener {
-                            scoreTeamA = 0
-                            scoreTeamB = 0
-                            equipeAScore.apply { text = scoreTeamA.toString() }
-                            equipeBScore.apply { text = scoreTeamB.toString() }
-                            equipeASomar3.isEnabled = true
-                            equipeBSomar3.isEnabled = true
+                            restartGame(scoreTeamA,
+                                scoreTeamB,
+                                equipeAScore,
+                                equipeBScore,
+                                equipeASomar3,
+                                equipeBSomar3,
+                                fun() {
+                                    scoreTeamA = 0
+                                    scoreTeamB = 0
+                                }
+                            )
                         }
                         .show()
                 }
             }
 
             resetGame.setOnClickListener {
-                scoreTeamA = 0
-                scoreTeamB = 0
-                equipeASomar3.isEnabled = true
-                equipeBSomar3.isEnabled = true
-                equipeAScore.apply { text = scoreTeamA.toString() }
-                equipeBScore.apply { text = scoreTeamB.toString() }
+
+                restartGame(scoreTeamA,
+                    scoreTeamB,
+                    equipeAScore,
+                    equipeBScore,
+                    equipeASomar3,
+                    equipeBSomar3,
+                    fun() {
+                        scoreTeamA = 0
+                        scoreTeamB = 0
+                    }
+                )
+
+
             }
         }
 
     }
+
+}
+
+fun restartGame(scoreA: Int, scoreB: Int, pontuacaoA: TextView, pontuacaoB: TextView, btA: Button, btB: Button, resetValues: () -> Unit) {
+    resetValues()
+    btA.isEnabled = true
+    btB.isEnabled = true
+    pontuacaoA.apply { text = scoreA.toString() }
+    pontuacaoB.apply { text = scoreB.toString() }
+
 }
