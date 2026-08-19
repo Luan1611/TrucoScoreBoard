@@ -33,13 +33,7 @@ class MainActivity : AppCompatActivity() {
                 equipeAScore.apply{text = scoreTeamA.toString()}
 
                 if (scoreTeamA == 11) {
-                    equipeASomar3.isEnabled = false
-
-                    Toast.makeText(
-                        root.context,
-                        "A equipe A entrou na mão de onze",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    buildToast(root.context, "equipe A", equipeASomar3)
                 }
 
                 if (scoreTeamA > 11) {
@@ -63,13 +57,7 @@ class MainActivity : AppCompatActivity() {
                 equipeBScore.apply{text = scoreTeamB.toString()}
 
                 if (scoreTeamB == 11) {
-                    equipeBSomar3.isEnabled = false
-
-                    Toast.makeText(
-                        root.context,
-                        "A equipe B entrou na mão de onze",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    buildToast(root.context, "equipe B", equipeBSomar3)
                 }
 
                 if (scoreTeamB > 11) {
@@ -93,13 +81,7 @@ class MainActivity : AppCompatActivity() {
                 equipeAScore.apply{text = scoreTeamA.toString()}
 
                 if (scoreTeamA == 11) {
-                    equipeASomar3.isEnabled = false
-
-                    Toast.makeText(
-                        root.context,
-                        "A equipe A entrou na mão de onze",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    buildToast(root.context, "equipe A", equipeASomar3)
                 }
 
                 if (scoreTeamA > 11) {
@@ -122,13 +104,7 @@ class MainActivity : AppCompatActivity() {
                 equipeBScore.apply{text = scoreTeamB.toString()}
 
                 if (scoreTeamB == 11) {
-                    equipeBSomar3.isEnabled = false
-
-                    Toast.makeText(
-                        root.context,
-                        "A equipe B entrou na mão de onze",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    buildToast(root.context, "equipe B", equipeBSomar3)
                 }
 
                 if (scoreTeamB > 11) {
@@ -205,4 +181,14 @@ fun buildAlertDialog(context: Context, equipe: String, scoreA: Int, scoreB: Int,
             )
         }
         .show()
+}
+
+fun buildToast(context: Context, equipe: String, bt: Button) {
+    bt.isEnabled = false
+
+    Toast.makeText(
+        context,
+        "A ${equipe} entrou na mão de onze",
+        Toast.LENGTH_LONG
+    ).show()
 }
