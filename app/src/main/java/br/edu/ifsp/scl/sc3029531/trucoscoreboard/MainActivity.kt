@@ -1,5 +1,6 @@
 package br.edu.ifsp.scl.sc3029531.trucoscoreboard
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -42,36 +43,18 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (scoreTeamA > 11) {
-                    AlertDialog.Builder(root.context)
-                        .setTitle("Fim de jogo!")
-                        .setMessage("A equipe A venceu a partida!")
-                        .setPositiveButton("Reiniciar partida") {dialog, _ ->
-                            restartGame(scoreTeamA,
-                                scoreTeamB,
-                                equipeAScore,
-                                equipeBScore,
-                                equipeASomar3,
-                                equipeBSomar3,
-                                fun() {
-                                    scoreTeamA = 0
-                                    scoreTeamB = 0
-                                }
-                            )
+
+                    buildAlertDialog(context = root.context, equipe = "Equipe A", scoreTeamA,
+                        scoreTeamB,
+                        equipeAScore,
+                        equipeBScore,
+                        equipeASomar3,
+                        equipeBSomar3,
+                        fun() {
+                            scoreTeamA = 0
+                            scoreTeamB = 0
                         }
-                        .setOnDismissListener {
-                            restartGame(scoreTeamA,
-                                scoreTeamB,
-                                equipeAScore,
-                                equipeBScore,
-                                equipeASomar3,
-                                equipeBSomar3,
-                                fun() {
-                                    scoreTeamA = 0
-                                    scoreTeamB = 0
-                                }
-                            )
-                        }
-                        .show()
+                    )
                 }
             }
 
@@ -90,36 +73,18 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (scoreTeamB > 11) {
-                    AlertDialog.Builder(root.context)
-                        .setTitle("Fim de jogo!")
-                        .setMessage("A equipe B venceu a partida!")
-                        .setPositiveButton("Reiniciar partida") {dialog, _ ->
-                            restartGame(scoreTeamA,
-                                scoreTeamB,
-                                equipeAScore,
-                                equipeBScore,
-                                equipeASomar3,
-                                equipeBSomar3,
-                                fun() {
-                                    scoreTeamA = 0
-                                    scoreTeamB = 0
-                                }
-                            )
+
+                    buildAlertDialog(context = root.context, equipe = "Equipe B", scoreTeamA,
+                        scoreTeamB,
+                        equipeAScore,
+                        equipeBScore,
+                        equipeASomar3,
+                        equipeBSomar3,
+                        fun() {
+                            scoreTeamA = 0
+                            scoreTeamB = 0
                         }
-                        .setOnDismissListener {
-                            restartGame(scoreTeamA,
-                                scoreTeamB,
-                                equipeAScore,
-                                equipeBScore,
-                                equipeASomar3,
-                                equipeBSomar3,
-                                fun() {
-                                    scoreTeamA = 0
-                                    scoreTeamB = 0
-                                }
-                            )
-                        }
-                        .show()
+                    )
                 }
             }
 
@@ -138,36 +103,17 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (scoreTeamA > 11) {
-                    AlertDialog.Builder(root.context)
-                        .setTitle("Fim de jogo!")
-                        .setMessage("A equipe A venceu a partida!")
-                        .setPositiveButton("Reiniciar partida") {dialog, _ ->
-                            restartGame(scoreTeamA,
-                                scoreTeamB,
-                                equipeAScore,
-                                equipeBScore,
-                                equipeASomar3,
-                                equipeBSomar3,
-                                fun() {
-                                    scoreTeamA = 0
-                                    scoreTeamB = 0
-                                }
-                            )
-                        }
-                        .setOnDismissListener {
-                            restartGame(scoreTeamA,
-                                scoreTeamB,
-                                equipeAScore,
-                                equipeBScore,
-                                equipeASomar3,
-                                equipeBSomar3,
-                                fun() {
-                                    scoreTeamA = 0
-                                    scoreTeamB = 0
-                                }
-                            )
-                        }
-                        .show()
+
+                    buildAlertDialog(context = root.context, equipe = "Equipe A", scoreTeamA,
+                        scoreTeamB,
+                        equipeAScore,
+                        equipeBScore,
+                        equipeASomar3,
+                        equipeBSomar3,
+                        fun() {
+                            scoreTeamA = 0
+                            scoreTeamB = 0
+                        })
                 }
             }
 
@@ -186,40 +132,22 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (scoreTeamB > 11) {
-                    AlertDialog.Builder(root.context)
-                        .setTitle("Fim de jogo!")
-                        .setMessage("A equipe B venceu a partida!")
-                        .setPositiveButton("Reiniciar partida") {dialog, _ ->
-                            restartGame(scoreTeamA,
-                                scoreTeamB,
-                                equipeAScore,
-                                equipeBScore,
-                                equipeASomar3,
-                                equipeBSomar3,
-                                fun() {
-                                    scoreTeamA = 0
-                                    scoreTeamB = 0
-                                }
-                            )
-                        }
-                        .setOnDismissListener {
-                            restartGame(scoreTeamA,
-                                scoreTeamB,
-                                equipeAScore,
-                                equipeBScore,
-                                equipeASomar3,
-                                equipeBSomar3,
-                                fun() {
-                                    scoreTeamA = 0
-                                    scoreTeamB = 0
-                                }
-                            )
-                        }
-                        .show()
+
+                    buildAlertDialog(context = root.context, equipe = "Equipe B", scoreTeamA,
+                        scoreTeamB,
+                        equipeAScore,
+                        equipeBScore,
+                        equipeASomar3,
+                        equipeBSomar3,
+                        fun() {
+                            scoreTeamA = 0
+                            scoreTeamB = 0
+                            }
+                    )
                 }
             }
 
-            resetGame.setOnClickListener {
+            resetGame.setOnClickListener{
 
                 restartGame(scoreTeamA,
                     scoreTeamB,
@@ -248,4 +176,33 @@ fun restartGame(scoreA: Int, scoreB: Int, pontuacaoA: TextView, pontuacaoB: Text
     pontuacaoA.apply { text = scoreA.toString() }
     pontuacaoB.apply { text = scoreB.toString() }
 
+}
+
+fun buildAlertDialog(context: Context, equipe: String, scoreA: Int, scoreB: Int, pontuacaoA: TextView, pontuacaoB: TextView, btA: Button, btB: Button, resetValues: () -> Unit) {
+    AlertDialog.Builder(context)
+        .setTitle("Fim de jogo!")
+        .setMessage("A ${equipe} venceu a partida!")
+        .setPositiveButton("Reiniciar partida") {dialog, _ ->
+            restartGame(
+                scoreA,
+                scoreB,
+                pontuacaoA,
+                pontuacaoB,
+                btA,
+                btB,
+                resetValues
+            )
+        }
+        .setOnDismissListener {
+            restartGame(
+                scoreA,
+                scoreB,
+                pontuacaoA,
+                pontuacaoB,
+                btA,
+                btB,
+                resetValues
+            )
+        }
+        .show()
 }
